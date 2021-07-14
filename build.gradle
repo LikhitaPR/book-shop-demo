@@ -2,11 +2,13 @@ plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
+	id 'java-library'
+	id 'checkstyle'
 }
-
+sourceCompatibility = 11
+targetCompatibility = 11
 group = 'com.tw.bootcamp'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
 
 configurations {
 	compileOnly {
@@ -40,4 +42,20 @@ test {
 	reports {
 		junitXml.enabled = true
 	}
+}
+
+def configDir = "${project.rootDir}/config"
+
+checkstyle {
+	toolVersion '8.36.1'
+	configFile file("$configDir/checkstyle/checkstyle.xml")
+
+}
+
+checkstyleMain {
+	source ='src/main/java'
+}
+
+checkstyleTest {
+	source ='src/test/java'
 }
