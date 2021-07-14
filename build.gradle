@@ -43,18 +43,3 @@ test {
 	}
 }
 
-def configDir = "${project.rootDir}/config"
-
-checkstyle {
-	toolVersion '8.36.1'
-	configFile file("$configDir/checkstyle/checkstyle.xml")
-
-}
-
-checkstyleMain {
-	source ='src/main/java'
-}
-
-checkstyleTest {
-	source ='src/test/java'
-}
