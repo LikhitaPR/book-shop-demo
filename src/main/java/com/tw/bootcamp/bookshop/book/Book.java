@@ -1,6 +1,11 @@
 package com.tw.bootcamp.bookshop.book;
 
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
 @Table(name = "books")
@@ -45,7 +50,7 @@ public class Book {
         return id;
     }
 
-    public Integer getquantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 }

@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
-
+	id 'checkstyle'
 
 }
 sourceCompatibility = '1.8'
@@ -41,5 +41,18 @@ test {
 	reports {
 		junitXml.enabled = true
 	}
+}
+def configDir = "${project.rootDir}/config"
+checkstyle {
+	toolVersion '8.36.1'
+	configFile file("$configDir/checkstyle.xml")
+}
+
+checkstyleMain {
+	source ='src/main/java'
+}
+
+checkstyleTest {
+	source ='src/test/java'
 }
 
