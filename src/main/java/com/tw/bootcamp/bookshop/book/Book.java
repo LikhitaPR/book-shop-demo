@@ -11,6 +11,7 @@ public class Book {
     private String name;
     private String authorName;
     private Integer price;
+    private Integer quantity;
 
     public Book() {
     }
@@ -19,6 +20,13 @@ public class Book {
         this.name = name;
         this.authorName = authorName;
         this.price = price;
+    }
+
+    public Book(String name, String authorName, Integer price, Integer quantity) {
+        this.name = name;
+        this.authorName = authorName;
+        this.price = price;
+        this.quantity=quantity;
     }
 
     public String getName() {
@@ -35,5 +43,9 @@ public class Book {
 
     public Long getId() {
         return id;
+    }
+
+    public Integer getquantity() {
+        return quantity;
     }
 }

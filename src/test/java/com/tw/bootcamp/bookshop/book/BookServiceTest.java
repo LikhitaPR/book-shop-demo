@@ -45,4 +45,17 @@ class BookServiceTest {
         assertEquals(2, books.size());
         assertEquals("costlier", books.get(0).getName());
     }
+
+    @Test
+    void shouldFetchAllBooksBeSortedByName() {
+        Book lowPrice = new Book("title", "author name", 300,3);
+        Book highPrice = new Book("costlier", "author name", 400,2);
+        bookRepository.save(lowPrice);
+        bookRepository.save(highPrice);
+
+        List<Book> books = bookService.fetchAll(2);
+
+        assertEquals(2, books.size());
+        assertEquals("title", books.get(0).getName());
+    }
 }
