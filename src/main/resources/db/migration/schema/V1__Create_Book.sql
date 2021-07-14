@@ -3,4 +3,5 @@ create table books
  name varchar(255) not null,
  price integer not null,
  author_name varchar(255) not null,
+ quantity integer,
  primary key (id))
