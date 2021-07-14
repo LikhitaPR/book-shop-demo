@@ -16,7 +16,6 @@ jobs:
       - image: gradle:alpine
     steps:
       - checkout
-      - run ./gradlew checkstyleMain
   test:
     docker:
       - image: gradle:alpine
