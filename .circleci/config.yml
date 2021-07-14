@@ -60,9 +60,7 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - checkstyle:
-          requires:
-            - build
+      - checkstyle
       - test
       - package:
           requires:
